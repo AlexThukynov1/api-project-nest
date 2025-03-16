@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, Param, Patch, Post } from '@nestjs/common';
-import { FindProductDto } from 'src/product/dto/find-product.dto';
 import { TopPageModel } from './top-page.model/top-page.model';
+import { FindTopPageDto } from './dto/find-top-page.dto';
 
 @Controller('top-page')
 export class TopPageController {
@@ -21,13 +21,13 @@ export class TopPageController {
     }
 
     @Patch(':id')
-    async patch(@Param('id') id:string, @Body() dto: ProductModel ) {
+    async patch(@Param('id') id:string, @Body() dto: TopPageModel ) {
 
     }
 
     @HttpCode(200)
     @Post() 
-        async find(@Body() dto: FindProductDto) {
+        async find(@Body() dto: FindTopPageDto) {
             
         }
 
